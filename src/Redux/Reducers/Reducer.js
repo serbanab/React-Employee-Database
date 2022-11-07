@@ -7,16 +7,17 @@ const initialState = {
 
 const Reducer = (state = initialState , action) => {
 
-    console.log("Asta este state" , state);
-    console.log("Date originale" , state.unorderedList);
-   
     switch (action.type) {
         case "ADD":
+
+           let status =  state.unorderedList.some(el => {
+                if(action.payload[0] === el[0] && action.payload[1] === el[1]) return true;
+           })
             
             return {
                 ...state,
-                employee : [ ...state.employee , action.payload],
-                unorderedList : [...state.employee , action.payload],
+                employee : status === false ? [ ...state.employee , action.payload] : [...state.employee],
+                unorderedList : status === false ? [...state.employee , action.payload] : [...state.employee],
             };
     
         case "NAME_SORT":

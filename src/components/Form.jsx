@@ -16,7 +16,7 @@ function Form({state , addEmployee , id}){
     return(
 
         <>
-           <form className="w-50" onSubmit={(e) => {
+           <form className="w-50" onSubmit = {(e) => {
                 e.preventDefault();
                 const vector = [];
 
@@ -32,8 +32,6 @@ function Form({state , addEmployee , id}){
                 areInputsValid =  inputsStatus.every(el => {
                     if(el === true) return true;
                 });
-
-                console.log("asta este vali" , areInputsValid);
 
                 if(areInputsValid){
 
@@ -53,7 +51,6 @@ function Form({state , addEmployee , id}){
                 }else{
                     setStatus(inputsStatus);
                 }
-                console.log("STATUS FINAL " , status);
                 inputsStatus = [];
 
            }}  >
