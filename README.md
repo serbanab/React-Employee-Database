@@ -1,2 +1,2 @@
 # React-Employee-Database
-A React built project that allows the creation of an employee database which has a number of five filters based on an employee form.  
+A web application built using React, React Redux and Bootstrap 5 which allows the creation of an employee database that has a number of five filters based on a form in which the employee data is entered.  
